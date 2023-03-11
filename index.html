@@ -17,17 +17,15 @@
   <body>
     <div class="container"></div>
     <form id="search-form">
-      <div class="card" style="max-width: 640px;">
-        <div class="card-body">
           <input type="search" id="city-input" placeholder="Enter City here" />
           <input type="submit" value="Search" class="btn btn-primary"></button>
-          <h4 class="card-title" id="city"></h4>
-          <h5 class="card-subtitle mb-2 text-muted"></h5>
+          <h4 id="city"></h4>
+          <h5 class="date"></h5>
           <h6 class="description" id ="description"></h6>
-          <img src="" alt="" id="icon" class="weather-icon float-left">
+          <img src="" alt="" id="icon" class="d-flex weather-temperature">
           <span class="temperature" id="temperature"></span>
           <span class="units">
-              <a href="#" id="celsius-link">°C</a> |
+              <a href="#" id="celsius-link" class="active">°C</a> |
               <a href="#" id="fahrenheit-link">°F</a>
             </span>
         </div>
