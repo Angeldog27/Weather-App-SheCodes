@@ -1,0 +1,16 @@
+.weaather-app {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #dadde1;
+}
+.temperature {
+  font-size: bold;
+}
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
