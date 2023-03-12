@@ -23,22 +23,23 @@
           <h4 id="city"></h4>
           <h5 class="date"></h5>
           <h6 class="description" id ="description"></h6>
-          <img src="" alt="" id="icon" class="d-flex weather-temperature">
+         <div class="clearfix weather-temperature">
+  <img src="" alt="" id="icon" class="float-left" />
+  <div class="float-left">
           <span class="temperature" id="temperature"></span>
           <span class="units">
               <a href="#" id="celsius-link" class="active">°C</a> |
               <a href="#" id="fahrenheit-link">°F</a>
             </span>
-        <ul>
-          <li>Humidity: <span id="humidity"></span>%</li>
-          <li>Wind: <span id="wind"></span>KM/H</li>
-        </ul>
-        <div class="row row-cols-md-7 g-4">
-          <div class="col">Monday</div>
-          <div class="col">Tuesday</div>
-          <div class="col">Wednesday</div>
-          <div class="col">Thursday</div>
-          <div class="col">Friday</div>
+            </div>
+          </div>
+        <div class="col-9">
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> m/h</li>
+              </ul>
+            </div>
+        <div class="weather-forecast" id="forecast">
         </div>
       <span class="border border-dark-subtle"></span>
     </form>
