@@ -23,7 +23,7 @@ h5.innerHTML = `${day},${hours}:${minutes}`;
 
 function displayForecast() {
   let forecast = document.querySelector("#forecast");
-  let days = ["Mon", "Tues", "Wed", "Thur"];
+  let days = ["Mon", "Tues", "Wed", "Thur", "Fri"];
   let forecastHTML = ` <div class="row">`;
   days.forEach(function (day) {
     forecastHTML =
@@ -55,6 +55,12 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&unit=metric`;
+  let apiKey = "4c9b53e4f8f5eb00df5915bdca340605";
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -71,6 +77,8 @@ function showTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].main);
+
+  getForecast(response.data.coord);
 }
 
 function displayFahrenheitTemp(event) {
@@ -90,8 +98,6 @@ function displayCelsiusTemp(event) {
 }
 
 let celsiusTemperature = null;
-
-displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSumbit);
